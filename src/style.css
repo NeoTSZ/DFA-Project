@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   color: white;
+  font-family: "Poppins";
 }
 
 body
@@ -68,11 +69,11 @@ body
 h1
 {
   color: white;
+  font-family: "Inter";
 }
 
 button, input
 {
-  font-family: sans-serif;
   padding: 6px;
   border-radius: 6px;
   border: none;
@@ -83,7 +84,6 @@ button, input
 button
 {
   color: black;
-  margin-left: 20px;
   font-weight: bold;
   flex-grow: 0;
 }
@@ -115,4 +115,5 @@ input
 {
   display: flex;
   width: 100%;
+  gap: 10px;
 }
