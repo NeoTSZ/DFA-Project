@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="src/style.css">
+
+  <title>Serial Noise Detector</title>
+
+</head>
+
+<body>
+
+  <div id="app">
+
+    <div id="left-panel">
+
+      <h1>Serial Data Stream Noise Detection Program</h1>
+      <p>This program scans an input stream of characters<br>(only 0-9 and a-z) and checks if potential noise is present.</p>
+
+      <div class="panel" id="input-elements">
+
+        <input type="text" id="input-stream" placeholder="Input stream goes here..">
+        <button id="check-stream">CHECK</button>
+
+      </div>
+
+    </div>
+
+    <div class="panel" id="right-panel">
+
+      <p>DFA Transitioning Details:</p>
+      <p id="dfa-details">No stream entered yet.</p>
+      <p id="noise-info">&nbsp;</p>
+
+    </div>
+
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+
+</body>
+
+</html>
