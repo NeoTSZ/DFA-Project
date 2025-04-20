@@ -44,6 +44,7 @@ function changeState(input)
 function checkStream()
 {
   const stream = String(inputStream.value);
+  let badIndex = 0;
 
   /* The input stream must be non-empty. */
   if (stream.length == 0 || stream == '')
@@ -58,19 +59,24 @@ function checkStream()
   for (let i = 0; i < stream.length; i ++)
   {
     /* The state should be changed. */
+    const letter = stream[i].toLowerCase();
     const temp = currentState;
-    changeState(stream[i]);
-    dfaDetails.innerHTML += `δ(${temp[0]}<sub>${temp[1]}</sub>, ${stream[i]}) = ${currentState[0]}<sub>${currentState[1]}</sub><br>`;
+    changeState(letter);
+    if (currentState == deadState && temp != deadState)
+    {
+      badIndex = i;
+    }
+    dfaDetails.innerHTML += `δ(${temp[0]}<sub>${temp[1]}</sub>, ${letter}) = ${currentState[0]}<sub>${currentState[1]}</sub><br>`;
   }
 
   /* Checking for dead state. */
   if (currentState == deadState)
   {
-    noiseInfo.innerHTML = 'It appears there may be noise in the input stream.'
+    noiseInfo.innerHTML = `&#10060; It appears there may be noise in the input stream at character #${badIndex}.`
   }
   else
   {
-    noiseInfo.innerHTML = 'No noise detected; your input stream is clean.';
+    noiseInfo.innerHTML = '&#9989; No noise detected; your input stream is clean.';
   }
 }
 
