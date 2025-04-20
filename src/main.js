@@ -8,10 +8,10 @@ const alphabet = [];
 const states = [];
 
 /** @type {String} Starting state of this DFA */
-const startState = 'q ';
+const startState = 'q';
 
 /** @type {String} Dead state of this DFA */
-const deadState = 'x ';
+const deadState = 'x';
 
 /** @type {Array<{current: String, input: String, next: String}>} List of transition mappings */
 const transitions = [];
@@ -66,7 +66,7 @@ function checkStream()
     {
       badIndex = i;
     }
-    dfaDetails.innerHTML += `δ(${temp[0]}<sub>${temp[1]}</sub>, ${letter}) = ${currentState[0]}<sub>${currentState[1]}</sub><br>`;
+    dfaDetails.innerHTML += `δ(${temp}, ${letter}) = ${currentState}<br>`;
   }
 
   /* Checking for dead state. */
